@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind : Application
+metadata: 
+  name: urstorie
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://gitlab.com/NeoXuS18/urstorie_infra
+    targetRevision: main
+    path: /
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
