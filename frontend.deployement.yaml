@@ -7,7 +7,8 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/part-of: auth-app
 spec:
-  replicas: 1
+  replicas: 3
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app.kubernetes.io/name: vite-app
@@ -22,7 +23,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: neoxus18/front-end-urstorie
+          image: neoxus18/front-end-urstorie:cda1fbf
           ports:
             - containerPort: 80
       imagePullSecrets:
