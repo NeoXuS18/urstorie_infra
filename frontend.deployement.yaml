@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: neoxus18/front-end-urstorie:cda1fbf
+          image: neoxus18/front-end-urstorie:26b73d2
           ports:
             - containerPort: 80
       imagePullSecrets:
